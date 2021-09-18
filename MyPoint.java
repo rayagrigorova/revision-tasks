@@ -16,6 +16,7 @@ public class MyPoint {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
 	MyPoint(int x, int y){
 		this.x = x;
 		this.y = y; 

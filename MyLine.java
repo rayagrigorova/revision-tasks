@@ -4,6 +4,9 @@ public class MyLine {
 	private MyPoint begin;
 	private MyPoint end; 
 	
+	public MyLine() {
+		
+	}
 	public MyLine(int x1, int y1, int x2, int y2){
 		begin = new MyPoint(x1, y1);
 		end = new MyPoint(x2, y2);
@@ -59,6 +62,10 @@ public class MyLine {
 	}
 	
 	public void setBeginXY(int x, int y) {
+		if(this.begin == null ) {
+			System.out.println("Uninitialized reference");
+			return;
+		}
 		this.setBeginX(x);
 		this.setBeginY(y);
 	}
@@ -71,22 +78,22 @@ public class MyLine {
 	}
 	
 	public void setEndXY(int x, int y) {
+		if(this.end == null ) {
+			System.out.println("Uninitialized reference");
+			return;
+		}
 		this.setEndX(x);
 		this.setEndY(y);
 	}
 	public double getLength() {
-		 int xDifSquare = (int) Math.pow((this.begin.getX() - this.end.getX()), 2);
-		 int yDifSquare = (int) Math.pow((this.begin.getY() - this.end.getY()), 2);
-		 return Math.sqrt(xDifSquare + yDifSquare);
+		 return Math.sqrt(Math.pow((this.getBeginX() - this.getEndX()), 2) + Math.pow((this.getBeginY() - this.getEndY()), 2));
 		
  	}
 	public double getGradient() {
-		int xDiff = this.begin.getX() - this.end.getX();
-		int yDiff = this.begin.getY() - this.end.getY();
-		return Math.atan2(xDiff, yDiff);
+		return Math.atan2(Math.abs(this.getBeginY() - this.getEndY()), Math.abs(this.getBeginX() - this.getEndX()));
 	}
 	public String toString() {
-		return "MyLine [begin = (" + this.begin.getX() + "," + this.begin.getY() + 
-				") , end = (" + this.end.getX() + ", " + this.end.getY() + ")]";
+		return "MyLine [begin = (" + this.getBeginX() + "," + this.getBeginY() + 
+				") , end = (" + this.getEndX() + ", " + this.getEndY() + ")]";
 	}
 }

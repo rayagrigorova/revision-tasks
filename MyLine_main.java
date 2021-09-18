@@ -9,10 +9,10 @@ public class MyLine_main {
 		MyLine l3 = new MyLine(45, 82, -10, 32);
 		MyLine l4 = new MyLine(0, -2, 16, 5);
 		
-		System.out.println("l1" + l1.toString());
-		System.out.println("l2" + l2.toString());
-		System.out.println("l3" + l3.toString());
-		System.out.println("l4" + l4.toString());
+		System.out.println("l1" + l1.toString() + " lenght: " + l1.getLength());
+		System.out.println("l2" + l2.toString() + " lenght: " + l2.getLength());
+		System.out.println("l3" + l3.toString() + " lenght: " + l3.getLength());
+		System.out.println("l4" + l4.toString() + " lenght: " + l4.getLength());
 		
 	}
 
